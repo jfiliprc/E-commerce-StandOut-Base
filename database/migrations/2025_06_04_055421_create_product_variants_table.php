@@ -12,6 +12,7 @@ class CreateProductVariantsTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->string('color', 50);
+            $table->string('color_hash', 7)->nullable(); // Ex: '#FF0000'
             $table->string('size', 10);
             $table->string('sku')->unique();
             $table->decimal('price', 10, 2);
